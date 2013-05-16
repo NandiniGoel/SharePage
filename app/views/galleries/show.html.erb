@@ -1,0 +1,17 @@
+<br />
+<%= page_header do %>
+  <h1>
+    <%= avatar_profile_link @user, {}, class: '' %>
+    <%= @user.full_name %>
+  </h1>
+<% end %>
+<h3><%= @user.first_name %>'s Photo Gallery:</h3>
+<% @statuses.each do |status| %>
+<% if @statuses %>
+  
+  <img src="<%= status.document.attachment.url %>" height="120" width="160">
+     
+    
+   
+  <% end %>
+<% end %>

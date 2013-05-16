@@ -1,0 +1,16 @@
+<%= page_header do %>
+  <h1>
+    <%= avatar_profile_link @user, {}, class: '' %>
+    <%= @user.full_name %>
+  </h1>
+<% end %>
+<% if @statuses %>
+  <h3><%= @user.first_name %>'s status updates:</h3>
+  <% @statuses.each do |status| %>
+    <div class="well">
+      <%= status.Content %>
+      <hr />
+      <%= link_to time_ago_in_words(status.created_at), status_path(status) %> ago
+    </div>
+  <% end %>
+<% end %>
